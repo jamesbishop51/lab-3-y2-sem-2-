@@ -104,6 +104,19 @@ namespace lab2
                         };
             currentGrid.ItemsSource = query.ToList();
         }
+        // question 6
+        // this one isnt working, kept getting a weird error i haven't seen before. 
+        private void btnQueryEx6_Click(object sender, RoutedEventArgs e)
+        {
+            Product p1 = (db.Products
+                .Where(p => p.ProductName.StartsWith("kick"))
+                .Select(p => p)).First();
+
+            p1.UnitPrice = 100m;
+
+            db.SaveChanges();
+            ShowProducts(dgCustomersEx6);
+        }
 
     }
 }
