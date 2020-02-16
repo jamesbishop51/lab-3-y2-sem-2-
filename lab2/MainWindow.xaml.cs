@@ -131,5 +131,16 @@ namespace lab2
             db.SaveChanges();
             ShowProducts(dgCustomersEx7);
         }
+        // question 8
+        private void btnQueryEx8_Click(object sender, RoutedEventArgs e)
+        {
+            var Products = from p in db.Products
+                           where p.ProductName.StartsWith("Kick")
+                           select p;
+
+            db.Products.RemoveRange(Products);
+            db.SaveChanges();
+            ShowProducts(dgCustomersEx8);
+        }
     }
 }
