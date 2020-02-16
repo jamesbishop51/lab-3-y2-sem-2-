@@ -117,6 +117,19 @@ namespace lab2
             db.SaveChanges();
             ShowProducts(dgCustomersEx6);
         }
+        // question 7
+        private void btnQueryEx7_Click(object sender, RoutedEventArgs e)
+        {
+            var products = from p in db.Products
+                           where p.ProductName.StartsWith("kick")
+                           select p;
 
+            foreach(var item in products)
+            {
+                item.UnitPrice = 100m;
+            }
+            db.SaveChanges();
+            ShowProducts(dgCustomersEx7);
+        }
     }
 }

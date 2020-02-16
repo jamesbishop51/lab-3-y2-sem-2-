@@ -68,6 +68,16 @@
                     <DataGrid Name="dgCustomersEx6" Grid.Row="1" Grid.Column="0"/>
                 </Grid>
             </TabItem>
+            <TabItem Name="Ex7" Header="Ex7" Width="50">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="90*"/>
+                    </Grid.RowDefinitions>
+                    <Button Name="btnQueryEx7" Content="Query" Height="25" Width="75" Click="btnQueryEx7_Click" />
+                    <DataGrid Name="dgCustomersEx7" Grid.Row="1" Grid.Column="0"/>
+                </Grid>
+            </TabItem>
 
         </TabControl>
         
