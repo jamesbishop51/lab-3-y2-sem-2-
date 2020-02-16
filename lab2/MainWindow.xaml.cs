@@ -86,8 +86,24 @@ namespace lab2
 
             db.Products.Add(p);
             db.SaveChanges();
+
+            ShowProducts(dgCustomersEx5);
         }
-        //gets the 
+        //gets the latest product information and displays it
+        private void ShowProducts(DataGrid currentGrid)
+        {
+            var query = from p in db.Products
+                        where p.Category.CategoryName.Equals("Beverages")
+                        orderby p.ProductID descending
+                        select new
+                        {
+                            p.ProductID,
+                            p.ProductName,
+                            p.Category.CategoryName,
+                            p.UnitPrice
+                        };
+            currentGrid.ItemsSource = query.ToList();
+        }
 
     }
 }
