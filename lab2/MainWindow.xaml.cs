@@ -25,6 +25,8 @@ namespace lab2
         {
             InitializeComponent();
         }
+        //question 1-9
+        #region questions
         //question 1
         private void btnQueryEx1_Click(object sender, RoutedEventArgs e)
         {
@@ -142,5 +144,13 @@ namespace lab2
             db.SaveChanges();
             ShowProducts(dgCustomersEx8);
         }
+        //question 9
+        private void btnQueryEx9_Click(object sender, RoutedEventArgs e)
+        {
+            var query = db.Customers_By_City("London");
+
+            dgCustomersEx9.ItemsSource = query.ToList();
+        }
+        #endregion questions 
     }
 }
